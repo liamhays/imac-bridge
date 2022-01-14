@@ -8,15 +8,20 @@ Classilla on the Mac can browse modern websites.
 
 # Usage
 Obviously, whatever Pi you use has to have both a WiFi and an Ethernet
-interface. As such, the Pi Zero is probably not a good choice.
+interface. As such, the Pi Zero is probably not a good choice. I have
+tested it on a Pi 4 and a Pi 1. It's slow to install on a Pi 1, but
+the bridge and `carl` work great once they're up and running.
 
 Set up a Raspberry Pi with Raspberry Pi OS Lite. Enable SSH and
-configure the WiFi to connect to your desired network. Once the Pi is
-on WiFi and SSH is enabled, run this command at the prompt:
+configure the WiFi to connect to your desired network. There are many
+resources on the rest of the Web that explain how to do this, so I'm not
+going to explain it here.
+
+Once the Pi is on WiFi and SSH is enabled, run this command at the
+prompt:
 
 ```
-wget
-https://github.com/liamhays/imac-bridge/raw/main/install_imac_bridge.sh
+wget https://github.com/liamhays/imac-bridge/raw/main/install_imac_bridge.sh
 
 bash install_imac_bridge.sh
 ```
