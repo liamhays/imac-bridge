@@ -14,7 +14,10 @@ configure the WiFi to connect to your desired network. Once the Pi is
 on WiFi and SSH is enabled, run this command at the prompt:
 
 ```
-curl blahblahblah | bash
+wget
+https://github.com/liamhays/imac-bridge/raw/main/install_imac_bridge.sh
+
+bash install_imac_bridge.sh
 ```
 
 The script will update the system, install some necessary packages,
