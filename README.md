@@ -1,9 +1,10 @@
 # imac-bridge
 A simple shell script to configure a Raspberry Pi as a
-WiFi-to-Ethernet bridge, for old iMacs and other vintage Apples
-without WiFi. It also configures `carl` from [Crypto
-Ancienne](https://github.com/classilla/cryanc) so that Classilla on
-the Mac can browse modern websites.
+WiFi-to-Ethernet bridge. Though the name suggests compatibility with
+only iMacs, it will work with any Mac with Ethernet, or any other
+Ethernet device for that matter. The script also configures `carl` from
+[Crypto Ancienne](https://github.com/classilla/cryanc) so that
+Classilla on the Mac can browse modern websites.
 
 # Usage
 Obviously, whatever Pi you use has to have both a WiFi and an Ethernet
@@ -25,9 +26,9 @@ configure WiFi-to-Ethernet bridge, and set up `carl`. Once it's
 finished, reboot the Pi. It should now be a bridge, so plug in the Mac
 and test. 
 
-Do not run the script more than once. This script is also designed to
-be run on a fresh installation---it will *probably* work on an existing
-installation, but your mileage may vary.
+Do not run the script more than once on one system. This script is
+also designed to be run on a fresh installation---it will *probably*
+work on an existing installation, but your mileage may vary.
 
 `carl` always runs in the background on the Pi, controlled by
 [`micro_inetd`](https://acme.com/software/micro_inetd/), regardless of
@@ -45,6 +46,13 @@ instructions
 
 Now, go to a TLS 1.2 site like <https://old.reddit.com> and see if
 Classilla can load it.
+
+# Security
+All the data sent between the Pi and the Mac is unencrypted. In
+addition, the Pi has no kind of firewall, and `carl` and `micro_inetd`
+are likely vulnerable programs. Don't setup a bridge Pi on an unsecure
+network, and know what devices are on the network before you start
+using the bridge.
 
 # Credits
 The bridge is configured using info from
